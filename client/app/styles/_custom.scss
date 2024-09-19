@@ -1,0 +1,148 @@
+// Here you can add other styles
+
+// footer styles
+.footer {
+  background-color: #1a1a1a;
+}
+
+.footer-block {
+  .block-title {
+    h3 {
+      color: $white !important;
+    }
+  }
+}
+
+.block-content {
+  ul {
+    li {
+      a {
+        color: $gray !important;
+        &:hover {
+          color: $white !important;
+        }
+      }
+    }
+  }
+}
+
+.footer-copyright {
+  span {
+    color: $white !important;
+  }
+}
+
+.policy {
+  margin: 20px 0;
+}
+
+.signup-form {
+  margin: auto;
+
+  .heading-register {
+    font-weight: bold;
+    font-size: clamp(2em, 2vw, 5em) !important;
+  }
+
+  @include media-breakpoint-down(sm) {
+    width: 90%;
+  }
+
+  @include media-breakpoint-up(md) {
+    width: 350px;
+  }
+}
+
+@font-face {
+  font-family: "TheQueenthine";
+  src: url(../font/TheQueenthineDemo.otf);
+}
+
+// add three dots (...) on the product card text if it is longer than one row
+.product-title {
+  height: 2.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.redirect-link {
+  color: $primary-color !important;
+  font-weight: $font-weight-normal;
+  text-transform: capitalize;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease-in-out;
+  }
+
+  &:hover::after {
+    text-decoration: underline !important;
+    border-color: $font-hover-color;
+  }
+}
+
+.product-edit-page {
+  .main {
+    background-color: $theme-white;
+  }
+}
+
+.product-create-page {
+  .main {
+    background-color: $theme-white;
+  }
+
+  h1 {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+
+    .goback-link {
+    }
+  }
+}
+
+.select-size-qty-label {
+  padding: 4px 8px;
+  color: #323232;
+  font-size: 12px;
+  border-bottom: none;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-x-small;
+}
+
+.create-product-btn {
+  padding: 6px clamp(4px, 3vw, 10px) !important;
+
+  span {
+    font-size: clamp(12px, 3vw, 16px) !important;
+  }
+}
+
+.custom-table-header {
+  @include center();
+}
+
+.profileTab-logout,
+.logout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 16px;
+
+  span {
+    color: $primary-color;
+    font-weight: bold;
+    font-size: 16px;
+    &:hover {
+      border-bottom: 2px solid;
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.profile-tab {
+  vertical-align: bottom;
+  inset: 30px 0px auto auto;
+  min-width: 290px;
+  max-width: 335px;
+  position: absolute;
+  transition: all 2s ease;
+  border: 2px solid black;
+  background-color: white;
+  overflow: hidden;
+
+  @include media-breakpoint-down(md) {
+    display: none;
+  }
+
+  ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+
+    &:not(:first-child) {
+      padding: 16px;
+    }
+
+    .profile {
+      color: $primary-color;
+      font-weight: bold;
+      font-size: 16px;
+      &:hover {
+        border-bottom: 2px solid;
+      }
+    }
+
+    a {
+      width: 100%;
+    }
+
+    li {
+      list-style: none;
+      border-bottom: 1px solid lightgray;
+      display: block;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 16px;
+
+      &:hover:not(:first-child) {
+        cursor: pointer;
+        background-color: #eaeaea;
+        width: 100%;
+      }
+
+      span {
+        font-size: 16px;
+      }
+
+      a {
+        button {
+          width: 100%;
+          border: none !important;
+          margin: 10px 0;
+        }
+      }
+    }
+  }
+}

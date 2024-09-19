@@ -1,0 +1,46 @@
+.shop {
+  .product-filter {
+    position: sticky;
+    top: 0;
+
+    .product-filter-card {
+      box-shadow: $box-shadow-navigation;
+    }
+  }
+
+  .brands-shop {
+    padding: 12px;
+    font-size: $font-size-x-large;
+  }
+
+  .add-to-wishlist .heart-icon {
+    cursor: pointer;
+    overflow: visible;
+    width: clamp(2.8em, 7.6vw, 3.2em);
+    transition: all 0.15s ease-in-out;
+  }
+
+  .item-new {
+    font-size: clamp(12px, 3.2vw, 14px) !important;
+  }
+
+  .item-deal {
+    font-size: clamp(12px, 3.2vw, 14px) !important;
+  }
+}
+
+.shop-page {
+  .shop-toolbar {
+    box-shadow: $box-shadow-navigation;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+}
+
+.shop-page {
+  .main {
+    background-color: $theme-white;
+  }
+}

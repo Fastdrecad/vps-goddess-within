@@ -1,0 +1,47 @@
+.go-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+  border: none;
+  cursor: pointer;
+  z-index: 999;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 550ms ease-in-out;
+  padding: 0 !important;
+
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 5px;
+
+    .go-to-top-text {
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+
+    .icon-span {
+      color: white;
+      text-align: center;
+
+      svg {
+        font-size: clamp(12px, 10vw, 22px);
+      }
+    }
+  }
+}

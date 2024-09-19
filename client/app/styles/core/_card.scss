@@ -1,0 +1,157 @@
+.card-item {
+  .product-container {
+    display: flex;
+    position: relative;
+    align-self: flex-start;
+    flex-direction: column;
+
+    a {
+      color: $black !important;
+    }
+
+    .add-wishlist-box {
+      position: absolute;
+      font-size: clamp(0.4em, 1vw, 1em);
+      background-color: white;
+      top: 0;
+      left: 0;
+      z-index: 4;
+    }
+
+    .item-footer {
+      min-height: 50px;
+    }
+
+    .item-container {
+      @include flex();
+      flex-direction: column;
+      gap: 10px;
+      margin: 0;
+
+      .item-wrapper {
+        position: relative;
+        overflow: hidden;
+        background-color: transparent;
+        height: 0;
+        padding-top: calc(1 / $ratio-portrait * 100%);
+        z-index: 3;
+
+        .item-image-box {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+
+          .item-deal {
+            position: absolute;
+            top: 35px;
+            right: 0;
+            background-color: red;
+            color: white;
+            padding: 3px 5px;
+            z-index: 3;
+            font-weight: bold;
+            font-size: clamp(8px, 2.8vw, 14px);
+          }
+
+          .item-new {
+            position: absolute;
+            top: 5px;
+            right: 0;
+            background-color: white;
+            color: $black;
+            padding: 3px 5px;
+            z-index: 3;
+            font-weight: bold;
+            font-size: clamp(8px, 2.8vw, 14px);
+          }
+
+          .item-image-2 {
+            position: relative;
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            display: none;
+          }
+
+          .item-image-1 {
+            position: relative;
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+
+            &:hover {
+              ~ .item-image-box {
+                .item-image-2 {
+                  display: block; // Show item-image-2 when item-image-1 is hovered
+                  box-shadow: none;
+                  border: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .item-body {
+      flex: 1 1 auto;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      font-size: clamp(12px, 2vw, 14px);
+
+      .card-item-details {
+        color: inherit;
+        font-size: inherit;
+
+        .item-name {
+          color: inherit;
+          font-weight: $font-weight-semibold;
+          font-size: inherit;
+
+          @include text-ellipsis(1);
+        }
+
+        .item-title {
+          color: inherit;
+          font-size: inherit;
+          @include text-ellipsis(1);
+        }
+      }
+
+      .item-price {
+        font-size: inherit;
+        color: inherit;
+        font-weight: $font-weight-bold;
+      }
+
+      .item-originally-price {
+        font-size: inherit;
+        color: inherit;
+        display: flex;
+        flex-wrap: wrap-reverse;
+        align-items: center;
+        justify-content: space-between;
+
+        .item-originally {
+          color: inherit;
+          text-decoration: line-through;
+          font-weight: $font-weight-bold;
+          font-size: inherit;
+
+          @include text-ellipsis(1);
+        }
+
+        .item-discount {
+          font-size: inherit;
+          color: red;
+          font-weight: $font-weight-bold;
+        }
+      }
+    }
+  }
+}

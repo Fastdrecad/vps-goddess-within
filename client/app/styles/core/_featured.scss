@@ -1,0 +1,133 @@
+.feature-container {
+  margin: 100px 0;
+
+  &.featured {
+    background-color: #084d5e;
+  }
+}
+
+.feature-wrapper {
+  position: relative;
+  padding: 40px 0;
+  overflow: hidden;
+
+  .feature-header {
+    padding: 0 100px;
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 50px;
+
+    @include media-breakpoint-down(md) {
+      padding: 0 20px;
+    }
+
+    h1 {
+      color: inherit !important;
+      flex: 2;
+      text-transform: capitalize;
+    }
+
+    p {
+      color: inherit !important;
+      flex: 3;
+      font-size: clamp(14px, 2vw, 16px);
+
+      @include media-breakpoint-down(md) {
+        font-size: $font-size-x-small;
+      }
+
+      @include media-breakpoint-down(sm) {
+        display: none;
+      }
+    }
+  }
+
+  .feature-content {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+
+    .feature-list {
+      display: flex;
+      white-space: nowrap;
+      scroll-padding-left: 24px;
+      scroll-behavior: smooth;
+      list-style: none;
+      flex-wrap: nowrap;
+      overflow-x: scroll;
+      transform: translateZ(0);
+      padding-left: calc($grid-margin - $grid-gutter/2);
+      padding-right: calc($grid-margin - $grid-gutter/2);
+      margin: 0;
+
+      @include media-breakpoint-up(xl) {
+        padding-left: calc(50% - 40rem + $grid-margin * 2);
+        padding-right: calc(50% - 40rem + $grid-margin * 2);
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+        position: relative;
+      }
+
+      .feature-list-item {
+        flex-basis: 25%;
+
+        padding: 0px 10px;
+        white-space: inherit;
+        max-width: 25%;
+        flex-shrink: 0;
+        scroll-snap-align: start;
+        scroll-snap-stop: always;
+        padding-left: calc($grid-gutter/8);
+        padding-right: calc($grid-gutter/8);
+
+        .product-container {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+  .slider-content {
+    position: absolute;
+    z-index: 1;
+    top: 45%;
+
+    .slider-right {
+      width: max-content;
+      position: absolute;
+      right: -85vw;
+
+      :hover {
+        background-color: rgb(226, 226, 226);
+      }
+    }
+
+    .slider-left {
+      position: absolute;
+      left: 15vw;
+      width: max-content;
+
+      :hover {
+        background-color: rgb(226, 226, 226);
+      }
+    }
+
+    .feature {
+      // padding: 10px 20px;
+      display: inline-block;
+      font-size: clamp(15px, 2.2vw, 26px);
+      background-color: white;
+      cursor: pointer;
+      aspect-ratio: 1;
+      border: none;
+
+      svg {
+        padding: clamp(2px, 2.2vw, 4px);
+        width: 100%;
+        height: 100%;
+        stroke-width: 1;
+      }
+    }
+  }
+}
