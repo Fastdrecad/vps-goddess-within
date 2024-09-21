@@ -10,11 +10,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Upgrade actions/checkout to v3, which supports Node.js 16+
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
+      # Upgrade ssh-agent to a version that supports Node.js 16+
       - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.5.3
+        uses: webfactory/ssh-agent@v0.7.0
         with:
           ssh-private-key: ${{ secrets.VPS_PRIVATE_KEY }}
 
