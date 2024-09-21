@@ -148,7 +148,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -209,15 +209,15 @@ pre {
   word-wrap: break-word; /* IE */
 }
 
-input[type='radio'] {
+input[type="radio"] {
   vertical-align: text-bottom;
 }
 
-input[type='checkbox'] {
+input[type="checkbox"] {
   vertical-align: bottom;
 }
 
-.ie7 input[type='checkbox'] {
+.ie7 input[type="checkbox"] {
   vertical-align: baseline;
 }
 
@@ -276,9 +276,9 @@ samp {
 /* hand cursor on clickable elements */
 .clickable,
 label,
-input[type='button'],
-input[type='submit'],
-input[type='file'],
+input[type="button"],
+input[type="submit"],
+input[type="file"],
 button {
   cursor: pointer;
 }
@@ -293,7 +293,7 @@ textarea {
 
 /* make buttons play nice in IE */
 button,
-input[type='button'] {
+input[type="button"] {
   overflow: visible;
   width: auto;
 }
@@ -311,7 +311,7 @@ input[type='button'] {
 /* let's clear some floats */
 .clearfix:before,
 .clearfix:after {
-  content: '\0020';
+  content: "\0020";
   display: block;
   height: 0;
   overflow: hidden;
@@ -321,6 +321,8 @@ input[type='button'] {
   clear: both;
 }
 
-.clearfix {
-  zoom: 1;
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
 }

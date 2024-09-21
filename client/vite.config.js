@@ -11,5 +11,8 @@ export default defineConfig({
       }
     }
   },
+  build: {
+    sourcemap: false
+  },
   plugins: [react()]
 });
